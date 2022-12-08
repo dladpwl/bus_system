@@ -57,7 +57,7 @@ public class CustomerMapperTests {
 	public void testDelete() {
 		log.info("DELETE COUNT: " + mapper.delete(3L));
 	}*/
-	
+	/*
 	@Test
 	public void testUpdate() {
 		CustomerVO customer = new CustomerVO();
@@ -66,8 +66,8 @@ public class CustomerMapperTests {
 		customer.setPasswd("9876");
 		customer.setPhone("01098765432");
 		
-		int count = mapper.update(cno);
+		int count = mapper.updateUser(customer);
 		log.info("UPDATE COUNT: " + count);
-	}
+	}*/
 }
 

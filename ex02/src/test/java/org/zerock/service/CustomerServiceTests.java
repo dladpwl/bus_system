@@ -51,7 +51,7 @@ public class CustomerServiceTests {
 		log.info(service.get(1L));
 	}
 
-	@Test
+	/*@Test
 	public void testDelete() {
 
 		// 게시물 번호의 존재 여부를 확인하고 테스트할 것
@@ -70,7 +70,7 @@ public class CustomerServiceTests {
 
 		customer.setPhone("01056781234");
 		log.info("MODIFY RESULT: " + service.modify(customer));
-	}
+	}*/
 
 }
 
