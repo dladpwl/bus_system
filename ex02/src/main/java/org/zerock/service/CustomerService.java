@@ -20,6 +20,8 @@ public interface CustomerService {
 	
 	public CustomerVO getUserById(Long cno); 
 	
+	public int emailCheck(String email);
+	
 }
 
 

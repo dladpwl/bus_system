@@ -36,7 +36,7 @@ padding: 5%;
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;
-    color: #1e6b7b;
+    color: #1E90FF;
     text-align: center;
 	height:45px; 
 	width:100px; 
@@ -49,15 +49,13 @@ padding: 5%;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
-<body style="background-color:rgb(248, 238, 225);">
+<body style="background-color:#baddf9;">
 	<div class="container"> 
-  		 <h1 style="text-align: center; font-size : 48px; font-family: 'Luckiest Guy', cursive; ">LOGIN</h1><br><br>
+  		 <h1 style="text-align: center; font-size : 48px; color:white; font-family: 'Luckiest Guy', cursive; ">LOGIN</h1><br><br>
 			<form class="login-form" method='post' action='/customer/login'>
 			<input type="text" class="input" placeholder="email" name="email"><br><br>
         	<input type="password" class="input" placeholder="password" name="passwd"><br><br>
         	 <br><br>
-	        <input type="reset" class="btn" value="취소" >
-	        <input type="button" class="btn" value="탈퇴" onclick="location.href='/customer/remove'" ><br>
 	        <input type="submit" class="btn" value="로그인" >
 	        <input type="button" class="btn" value='회원가입' onclick="location.href='/customer/register'" >
 			

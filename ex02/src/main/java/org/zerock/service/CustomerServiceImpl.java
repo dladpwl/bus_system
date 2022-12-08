@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void modifyInfo(CustomerVO customer) {
 		log.info("modify......" + customer);
-		mapper.update(customer);
+		mapper.updateUser(customer);
 	}
 
 	@Override
@@ -62,6 +62,11 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public CustomerVO getUserById(Long cno) {
 		return mapper.getUserById(cno);
+	}
+	
+	@Override
+	public int emailCheck(String email) {
+		return mapper.emailCheck(email);
 	}
 }
 

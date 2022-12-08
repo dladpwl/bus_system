@@ -1,8 +1,10 @@
 package org.zerock.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +38,12 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/login")
-	public void login() {
-		
+	public String login(String email, String passwd, HttpSession session) {
+		Long cno = (Long) session.getAttribute("cno");
+		if (cno != null) {
+			return "/customer/main";
+		}
+		return "/customer/login";
 	}
 	
 	@GetMapping("/")
@@ -52,6 +58,14 @@ public class CustomerController {
 			return "redirect:/customer/login";
 		}
 	
+	@GetMapping("/alert")
+	public void alert() {
+		}
+	
+	@GetMapping("/alert1")
+	public void alert1() {
+		}
+	
 	@GetMapping("/remove")
 	public void remove() {
 
@@ -60,7 +74,7 @@ public class CustomerController {
 	@PostMapping("/login")
 	public String login( String email, String passwd,
 							HttpSession session,
-							RedirectAttributes rttr) {
+							RedirectAttributes rttr,HttpServletResponse response) throws IOException {
 		log.info("login: " + email + passwd);
 		Long cno = service.login(email, passwd);
 		if(cno == null) {
@@ -74,14 +88,18 @@ public class CustomerController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:/customer/";
 	}
 
 	@PostMapping("/register")
-	public String register(CustomerVO customer, RedirectAttributes rttr) {
+	public String register(CustomerVO customer, String email, RedirectAttributes rttr) {
 
 		log.info("register: " + customer);
-
+		int count =  service.emailCheck(email);
+		
+		if (count >= 1) {
+			return "redirect:/customer/alert1";
+		}
 		service.register(customer);
 
 		rttr.addFlashAttribute("result", customer.getCno());
@@ -101,6 +119,7 @@ public class CustomerController {
 		 CustomerVO customer = service.getUserById(cno);
 		 model.addAttribute("customer", customer);
 		 return "/customer/modify";
+
 	 }
 	 
 	 @PostMapping("/modify")
@@ -110,7 +129,7 @@ public class CustomerController {
 		 Long cno = (Long) session.getAttribute("cno");
 		 customer.setCno(cno);
 		 service.modifyInfo(customer);
-		 return "redirect:/";
+		 return "redirect:/customer/";
 	 }
 
 	 
@@ -124,7 +143,7 @@ public class CustomerController {
 			 service.remove(cno);
 		 }
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:/customer/";
 }
 	 
 }

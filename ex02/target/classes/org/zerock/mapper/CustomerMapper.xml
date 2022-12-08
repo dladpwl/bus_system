@@ -29,13 +29,18 @@
 		delete tbl_customer where cno = #{cno}
 	</delete>
 	
-	<update id="update" parameterType="org.zerock.domain.CustomerVO">
+	<update id="updateUser" parameterType="org.zerock.domain.CustomerVO">
 		update tbl_customer
-		set passwd = #{passwd},
-		phone = #{phone},
+		set 
+		passwd = #{passwd},
+		phone = #{phone}
 		where cno = #{cno}
 	</update>
-	
+	<select id="emailCheck" resultType ="int">
+	  SELECT COUNT(*) 
+	  FROM tbl_customer
+	  WHERE email = #{email}
+	</select>
 	<select id="getUserByEmail" resultType="org.zerock.domain.CustomerVO">
 		select *
 		from tbl_customer

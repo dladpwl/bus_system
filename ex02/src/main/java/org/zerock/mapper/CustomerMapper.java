@@ -13,7 +13,8 @@ public interface CustomerMapper {
 	public void insertSelectKey(CustomerVO customer);
 	public CustomerVO read(Long cno);
 	public int delete(Long cno);
-	public void update(CustomerVO customer);
+	public int emailCheck(String email);
+	public void updateUser(CustomerVO customer);
 	public  CustomerVO getUserByEmail(String email);
 	public  CustomerVO getUserById(Long cno);
 }

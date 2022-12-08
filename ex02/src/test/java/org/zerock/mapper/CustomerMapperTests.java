@@ -66,7 +66,7 @@ public class CustomerMapperTests {
 		customer.setPasswd("9876");
 		customer.setPhone("01098765432");
 		
-		int count = mapper.update(customer);
+		int count = mapper.update(cno);
 		log.info("UPDATE COUNT: " + count);
 	}
 }

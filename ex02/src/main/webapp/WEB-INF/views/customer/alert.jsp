@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-Response.Write("<script>alert('아이디와 비밀번호를 다시 확인해주세요');</script>");
-Response.Write("<script>location.href='/customer/login';</script>");
+<%
+	String url = "/customer/login";
+	String msg = "이메일과 비밀번호를 확인해주세요";
+	%>
+<script type="text/javascript">
+	alert("<%=msg%>");
+	location.href="<%=url%>";
+</script>
 </body>
 </html>

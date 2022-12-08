@@ -25,7 +25,7 @@ padding: 5%;
     border: none;
     }
 .btn {
-	font-family: 'Do Hyeon', sans-serif;
+	
 	position: relative;
     border: none;
     padding: 5px 20px;
@@ -35,7 +35,7 @@ padding: 5%;
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;
-    color: #1e6b7b;
+    color: #1E90FF;
     text-align: center;
 	height:45px; 
 	width:100px; 
@@ -43,23 +43,25 @@ padding: 5%;
     display: table-cell;
     margin: 20px;
 }
+h2 {
+	font-family: 'Luckiest Guy', cursive;
+	text-align: center;
+	font-size : 25px;
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color:rgb(248, 238, 225);">
+<body style="background-color:#baddf9;">
 <div class="container"> 
-   <h1 style="text-align: center; font-size : 48px; font-family: 'Luckiest Guy', cursive; ">DELETE</h1><br><br>
-	<div class="container" style="width: 30%; margin-top: 100px;">
-		<form name="loginFrm" method="post" action="/customer/remove">
-			<h3 style="margin-bottom: 40px; text-align : center; color: #01428c;  font-weight: bold;"> 회원탈퇴 </h3>
-
-			<div class="mb-3">
-				<h5 style="margin-bottom: 40px; text-align : center; "> 정말로 탈퇴 하시겠습니까? </h5>
-			</div>
-			<input type="button" class="w-100 btn btn-lg text-white" style="background-color: #234C9B;" onClick="location.href='/customer/remove'" value="탈퇴"  >
-		</form>
+  		 <h1 style="text-align: center; font-size : 48px; color:white; font-family: 'Luckiest Guy', cursive; ">REMOVE</h1><br><br>
+			<form class="login-form" method='post' action='/customer/remove'>
+			<h3>정말 탈퇴하시겠습니까?</h3>
+        	 <br><br>
+	        <input type="submit" class="btn" value="탈퇴" >
+			
+			</form>
 	</div>
 </body>
 </html>
