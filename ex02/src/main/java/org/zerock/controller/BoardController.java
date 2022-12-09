@@ -29,8 +29,48 @@ public class BoardController {
 	public void register() {
 
 	}
+	@GetMapping("/main")
+	public void main() {
+
+	}
+	@GetMapping("/rent")
+	public void rent() {
+
+	}
+	@GetMapping("/taxi")
+	public void taxi() {
+
+	}
+	@GetMapping("/customer_center")
+	public void customer_center() {
+
+	}
+	@GetMapping("/schoolbusinfog1")
+	public void schoolbusinfog1() {
+
+	}
+	@GetMapping("/schoolbusinfog2")
+	public void schoolbusinfog2() {
+
+	}
+	@GetMapping("/schoolbusinfom1")
+	public void schoolbusinfom1() {
+
+	}
+	@GetMapping("/schoolbusinfom2")
+	public void schoolbusinfom2() {
+
+	}
+	@GetMapping("/schoolbusinfoe1")
+	public void schoolbusinfoe1() {
+
+	}
+	@GetMapping("/schoolbusinfoe2")
+	public void schoolbusinfoe2() {
+
+	}
 	
-	@GetMapping("/list")
+	 @GetMapping("/list")
 	 public void list(Criteria cri, Model model) {
 	
 		 log.info("list: " + cri);
@@ -87,5 +127,3 @@ public class BoardController {
 		}
 
 }
-
-

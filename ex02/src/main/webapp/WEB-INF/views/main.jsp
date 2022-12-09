@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
 <title>메인페이지</title>
 </head>
-<style>
+<style> 
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap'); 
 * {
   padding: 0;
   margin: 0;
@@ -15,6 +19,8 @@
 body {
   background-color: white;
   color: black;
+  
+  
 }
 container {
   max-width: 700px;
@@ -26,6 +32,7 @@ container {
   justify-content: space-between;
   align-items: center;
 }
+
 header {
   display: flex;
   justify-content: space-around;
@@ -33,11 +40,13 @@ header {
   align-items: center;
   padding: 1.2rem 0;
   background-color: #baddf9;
+  font-family: 'Do Hyeon', sans-serif;
 }
 header > p {
   font-size: 1.5rem;
   font-weight: 700;
   color : white;
+  font-family: 'Do Hyeon', sans-serif;
 }
 header > ul {
   display: flex;
@@ -47,6 +56,7 @@ header > ul >li {
   list-style-type: none;
   margin-left: 1.5rem;
 }
+
 header > ul > li > a {
   text-decoration: none;
   font-size: 1.2rem;
@@ -54,6 +64,8 @@ header > ul > li > a {
   padding-bottom: 5px;
   color: #89abc6;
 }
+
+
 header > ul > li >a:hover {
   border-bottom: 5px solid white ;
 }
@@ -62,9 +74,12 @@ header > ul > li >a:hover {
     flex-direction: column;
   }
 }
+
+
 li {
 	list-style-type: none;
 }
+
 section {
   padding: 0 3rem;
   text-align: center;
@@ -101,6 +116,7 @@ footer > a{
   text-decoration: none;
   color: white;
 }
+
 .horizontal {
     list-style-type:none; 
     margin:40 auto; 
@@ -134,17 +150,21 @@ footer > a{
     text-transform:uppercase; 
     letter-spacing:.08em;
 }
+
 .horizontal li a:hover {
     color: #89abc6;
 }
+
 .horizontal li:first-child a { border-left:0 }
 .horizontal li:last-child a { border-right:0; }
+
+
 </style>
 <body>
 	<div class="wrapper">
 	    <div class="container">
 	    	 <header>
-			   <p onclick ="location.href = '/board/main'">통합버스시스템</p>
+			   <p onclick ="location.href = '/board/main'" style="font-family: 'Do Hyeon', sans-serif;">통합버스시스템</p>
 			   <div class="navbar">
 				<ul class="horizontal">               
 				   <li><a href="#">버스조회 </a>
@@ -157,20 +177,20 @@ footer > a{
 				   <li><a href="#">운행정보 </a>
 				   		<ul>
 				            <li><a href="#">버스회사안내 </a></li>
-				            <li><a href="#">운행/노선 정보 </a></li>
+				            <li><a href="/board/schoolbusinfog1">운행/노선 정보 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="#">렌트카/택시 </a>
 				        <ul>
 				            <li><a href="/board/rent">렌트카 </a></li>
-				            <li><a href="#">택시 </a></li>
+				            <li><a href="/board/taxi">택시 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="#">고객지원 </a>
 				   		<ul>
-				            <li><a href="#">공지사항 </a></li>
-				            <li><a href="#">건의사항 </a></li>
-				            <li><a href="#">고객센터 </a></li>
+				            <li><a href="/notice/list">공지사항 </a></li>
+				            <li><a href="/suggestion/list">건의사항 </a></li>
+				            <li><a href="/board/customer_center">고객센터 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="/customer/modify">회원정보</a></li>

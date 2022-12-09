@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>사용자 로그인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<title>사용자 로그인 </title>
 </head>
-<style>
-.container {
-padding: 5%;
-}
+<style> 
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap'); 
+
 .login-form {
 	margin: auto;
     width: 300px;
@@ -43,6 +45,16 @@ padding: 5%;
     background: whitesmoke;
     display: table-cell;
     margin: 20px;
+}
+container {
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 </style>
