@@ -21,4 +21,5 @@ public interface BoardService {
 	
 	//추가
 	public int getTotal(Criteria cri);
+
 }

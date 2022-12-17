@@ -161,31 +161,31 @@ footer > a{
 				<ul class="horizontal">               
 				   <li><a href="#">버스조회 </a>
 				   		<ul>
-				            <li><a href="#">통학버스 조회 </a></li>
-				            <li><a href="#">시내버스 정보 </a></li>
-				            <li><a href="#">시외버스 정보 </a></li>
+				            <li><a href="/select/resinfo">통학버스 조회 </a></li>
+				            <li><a href="/bus/bus200">시내버스 정보 </a></li>
+				            <li><a href="/bus/busGJ">시외버스 정보 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="#">운행정보 </a>
 				   		<ul>
-				            <li><a href="#">버스회사안내 </a></li>
-				            <li><a href="#">운행/노선 정보 </a></li>
+				            <li><a href="/bus/busNara">버스회사안내 </a></li>
+				            <li><a href="/bus/schoolbusinfog1">운행/노선 정보 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="#">렌트카/택시 </a>
 				        <ul>
 				            <li><a href="/board/rent">렌트카 </a></li>
-				            <li><a href="#">택시 </a></li>
+				            <li><a href="/board/taxi">택시 </a></li>
 				        </ul>
 				   </li>
 				   <li><a href="#">고객지원 </a>
 				   		<ul>
-				            <li><a href="#">공지사항 </a></li>
-				            <li><a href="#">건의사항 </a></li>
-				            <li><a href="#">고객센터 </a></li>
+				            <li><a href="/notice/list">공지사항 </a></li>
+				            <li><a href="/suggestion/list">건의사항 </a></li>
+				            <li><a href="/board/customer_center">고객센터 </a></li>
 				        </ul>
 				   </li>
-				   <li><a href="#">회원정보</a></li>
+				   <li><a href="/customer/modify">회원정보</a></li>
 				</ul>
 			</div>
 			</header>

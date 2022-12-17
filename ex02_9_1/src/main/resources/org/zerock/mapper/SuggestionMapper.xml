@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="org.zerock.mapper.SuggestionMapper">
+<select id="getList" resultType="org.zerock.domain.SuggestionVO"> select * from suggestion where bno > 0
+</select> 
+
+	<insert id="insert">
+		insert into suggestion (bno, title, content, writer)
+		values (seq_suggestion.nextval, #{title}, #{content}, #{writer})
+	</insert>
+
+	<insert id="insertSelectKey">
+
+		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+			select seq_suggestion.nextval from dual
+		</selectKey>
+
+		insert into suggestion (bno, title, content, writer)
+		values (#{bno}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="read" resultType="org.zerock.domain.SuggestionVO"> 
+		select * from suggestion where bno = #{bno} </select>
+	
+	<delete id="delete">
+		delete suggestion where bno = #{bno}</delete>
+	
+
+	<update id="update">
+		update suggestion
+		set title = #{title},
+		content = #{content},
+		writer = #{writer},
+		updateDate = sysdate
+		where bno = #{bno}
+	</update>
+	
+	<select id="getListWithPaging" resultType="org.zerock.domain.SuggestionVO"> 
+		<![CDATA[
+		select bno, title, content, writer, regdate, updatedate from 
+		(	
+			select /*+INDEX_DESC(suggestion pk_suggestion) */ 
+			rownum rn, bno, title, content, writer, regdate, updatedate
+			from suggestion 
+			where rownum <= #{pageNum} * #{amount} 
+		) 
+		where rn > (#{pageNum} -1) * #{amount} 
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from suggestion where bno > 0
+	</select>
+</mapper>
