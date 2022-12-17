@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.ReservationMapper">
+
+	<select id="getList" resultType="org.zerock.domain.ReservationVO">
+	select * from tbl_resinfo where rno > 0 
+	</select>
+	
+	<select id = "read" resultType = "org.zerock.domain.ReservationVO">
+	select * from tbl_resinfo where rno =# {rno}
+	</select>
+	
+	<update id="updateSeat">
+   		 update tbl_resinfo SET seatno = #{seatno} WHERE rno = #{rno}
+	</update>
+	
+	<delete id = "delete">
+		delete from tbl_resinfo where rno = #{rno}
+	
+	</delete>
+	
+
+	
+</mapper>
